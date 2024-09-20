@@ -44,3 +44,16 @@ img {
 span {
   color: #8c1407;
 }
+
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px; /* This ensures the outer container has a radius */
+  padding: 3px; /* Add some padding to show the border-radius */
+}
+
+progress {
+  width: 100%;
+  border-radius: 10px; /* Attempt to apply the border-radius to progress */
+  /* background-color: transparent; Ensure the background is transparent */
+}
