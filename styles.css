@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .tittle {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -5,4 +12,25 @@
 
 .tittle2 {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.votat {
+  margin-top: 50px;
+}
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+progress::-webkit-progress-value {
+  background-color: #8c1407;
+}
+
+/* For Firefox */
+progress::-moz-progress-bar {
+  background-color: #8c1407;
+}
+
+/* Optional: Setting a background for the progress bar track */
+progress {
+  background-color: #ddd; /* you can choose any color for the track */
+  width: 100%; /* adjust width if needed */
+  border-radius: 10px;
 }
