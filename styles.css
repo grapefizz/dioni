@@ -15,7 +15,7 @@ body {
 }
 
 .votat {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 /* For Webkit browsers (Chrome, Safari, Edge) */
@@ -33,4 +33,10 @@ progress {
   background-color: #ddd; /* you can choose any color for the track */
   width: 100%; /* adjust width if needed */
   border-radius: 10px;
+}
+
+img {
+  margin-top: 50px;
+  width: 275px;
+  height: auto;
 }
