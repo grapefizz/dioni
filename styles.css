@@ -1,60 +1,135 @@
+/* Global Styles */
 body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #f3f3f3, #fff);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.tittle {
-  font-family: Arial, Helvetica, sans-serif;
+.container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
   text-align: center;
 }
 
-.tittle2 {
-  font-family: Arial, Helvetica, sans-serif;
+/* Title and Header Styling */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  letter-spacing: 2px;
 }
 
-.votat {
-  margin-top: 25px;
-}
-
-/* For Webkit browsers (Chrome, Safari, Edge) */
-progress::-webkit-progress-value {
-  background-color: #8c1407;
-}
-
-/* For Firefox */
-progress::-moz-progress-bar {
-  background-color: #8c1407;
-}
-
-/* Optional: Setting a background for the progress bar track */
-progress {
-  background-color: #ddd; /* you can choose any color for the track */
-  width: 100%; /* adjust width if needed */
-  border-radius: 10px !important;
-  overflow: hidden;
-}
-
-img {
-  margin-top: 50px;
-  width: 200px;
-  height: auto;
-}
-
-span {
+.title span {
   color: #8c1407;
 }
 
-.progress-container {
-  width: 100%;
-  background-color: #ddd;
-  border-radius: 10px; /* This ensures the outer container has a radius */
-  padding: 3px; /* Add some padding to show the border-radius */
+/* Progress Bar Section */
+.votat {
+  margin-top: 30px;
 }
 
-progress {
+.progress-container {
+  margin: 20px 0;
+  position: relative;
   width: 100%;
-  border-radius: 10px; /* Attempt to apply the border-radius to progress */
-  /* background-color: transparent; Ensure the background is transparent */
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background-color: #8c1407;
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+.progress-bar[data-value="97"] {
+  width: 97%;
+}
+
+.progress-bar[data-value="3"] {
+  width: 3%;
+}
+
+/* Image Styling */
+img {
+  margin-top: 30px;
+  width: 150px;
+  height: auto;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Animations for All Elements */
+.animated {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.animated:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.animated:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.animated:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.animated:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+.animated:nth-child(6) {
+  animation-delay: 3s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .progress-bar {
+    height: 15px;
+  }
 }
