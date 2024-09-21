@@ -33,6 +33,7 @@ progress {
   background-color: #ddd; /* you can choose any color for the track */
   width: 100%; /* adjust width if needed */
   border-radius: 10px !important;
+  overflow: hidden;
 }
 
 img {
