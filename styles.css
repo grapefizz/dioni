@@ -50,7 +50,7 @@ body {
   height: 20px;
   width: 0;
   background-color: #8c1407;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: width 1.5s ease-in-out;
 }
 
