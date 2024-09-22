@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+
 /* Global Styles */
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Alexandria";
   background: linear-gradient(135deg, #f3f3f3, #fff);
   display: flex;
   justify-content: center;
