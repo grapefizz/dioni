@@ -1,0 +1,1 @@
+alert("Voto per Arin se ti qi ropt");
