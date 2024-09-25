@@ -1,1 +1,7 @@
-alert("Voto per Arin se ti qi ropt");
+let selection = confirm("A ki me votu per Arin?");
+
+if (selection) {
+
+} else {
+  location.reload();
+}
