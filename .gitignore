@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Runtime data / pid
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment & local config
+.env
+.env.*.local
+*.local
+
+# Build / cache
+dist/
+build/
+.cache/
+.tmp/
+coverage/
+.idea/
+.vscode/
+.DS_Store
+
+# Server state file (vote counter)
+count.json
+
+# OS / misc
+Thumbs.db
+
+# Node REPL history

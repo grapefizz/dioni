@@ -21,22 +21,35 @@
   </div>
 
   <script>
-    // Simple in-memory + localStorage counter
     const countEl = document.getElementById('voteCount');
     const btn = document.getElementById('voteBtn');
-    const KEY = 'ari_votes';
-    let count = parseInt(localStorage.getItem(KEY) || '0', 10);
-    countEl.textContent = count;
 
-    btn.addEventListener('click', () => {
-      count += 1;
-      countEl.textContent = count;
-      localStorage.setItem(KEY, count);
-      const wrap = btn.closest('.vote-counter');
-      wrap.classList.add('changed');
-      setTimeout(()=>wrap.classList.remove('changed'),400);
+    // Initial fetch
+    fetch('/api/count')
+      .then(r => r.json())
+      .then(d => countEl.textContent = d.count)
+      .catch(()=>{});
+
+    // Real-time updates via SSE
+    const es = new EventSource('/api/stream');
+    es.onmessage = (e) => {
+      try {
+        const { count } = JSON.parse(e.data);
+        countEl.textContent = count;
+        const wrap = btn.closest('.vote-counter');
+        wrap.classList.add('changed');
+        setTimeout(()=>wrap.classList.remove('changed'),400);
+      } catch {}
+    };
+
+    btn.addEventListener('click', async () => {
       btn.disabled = true;
-      setTimeout(() => btn.disabled = false, 400);
+      try {
+        await fetch('/api/vote', { method: 'POST' });
+        // No manual increment; server broadcast updates everyone
+      } finally {
+        setTimeout(()=>btn.disabled = false, 400);
+      }
     });
   </script>
 </body>

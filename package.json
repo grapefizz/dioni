@@ -1,0 +1,24 @@
+{
+  "name": "dioni",
+  "version": "1.0.0",
+  "description": "- Gjakova eshte zemra e kosoves",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grapefizz/dioni.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grapefizz/dioni/issues"
+  },
+  "homepage": "https://github.com/grapefizz/dioni#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
