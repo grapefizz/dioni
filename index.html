@@ -11,19 +11,33 @@
     <h1 class="title animated">Votoni për <span>Ari Junikun</span></h1>
     <h2 class="title animated"><span>Gjakova</span> është <strong>zemra</strong> e Kosovës!</h2>
 
-    <div class="votat animated">
-      <h2 class="tittle2 animated">Votat për Ari Junikun (97%)</h2>
-      <div class="progress-container">
-        <div class="progress-bar" data-value="97"></div>
-      </div>
-
-      <h2 class="tittle2 animated">Votat për kandidatët e tjerë (3%)</h2>
-      <div class="progress-container">
-        <div class="progress-bar" data-value="3"></div>
-      </div>
+    <!-- Removed old votes section -->
+    <div class="vote-counter animated">
+      <h2 class="tittle2">Votat: <span id="voteCount">0</span></h2>
+      <button id="voteBtn" class="btn-theme">Shto një votë</button>
     </div>
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Stema_e_Komun%C3%ABs_Gjakov%C3%AB.svg/1200px-Stema_e_Komun%C3%ABs_Gjakov%C3%AB.svg.png" alt="Gjakova Logo" class="animated">
   </div>
+
+  <script>
+    // Simple in-memory + localStorage counter
+    const countEl = document.getElementById('voteCount');
+    const btn = document.getElementById('voteBtn');
+    const KEY = 'ari_votes';
+    let count = parseInt(localStorage.getItem(KEY) || '0', 10);
+    countEl.textContent = count;
+
+    btn.addEventListener('click', () => {
+      count += 1;
+      countEl.textContent = count;
+      localStorage.setItem(KEY, count);
+      const wrap = btn.closest('.vote-counter');
+      wrap.classList.add('changed');
+      setTimeout(()=>wrap.classList.remove('changed'),400);
+      btn.disabled = true;
+      setTimeout(() => btn.disabled = false, 400);
+    });
+  </script>
 </body>
 </html>
